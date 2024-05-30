@@ -46,7 +46,16 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
     
     document.getElementById('summary').innerHTML = summary;
 
-    alert(`Booking ID: ${bookingId}\nBooking Date: ${bookingDate}\nBooking Time: ${bookingTime}\nName: ${name}\nPhone Number: ${phone}\nCheck-in Date: ${checkin}\nCheck-out Date: ${checkoutDate.toISOString().split('T')[0]}\nTotal Price: Rp. ${totalPrice}`);
+    alert(`ID: ${bookingId} | ${bookingDate} - ${bookingTime}
+    Nama: ${name}
+    No. HP: ${phone}
+    Check-in: ${checkin}
+    Check-out: ${checkoutDate.toISOString().split('T')[0]}
+    Lama: ${nights} malam
+    Tipe Kamar: ${roomType.charAt(0).toUpperCase() + roomType.slice(1)}
+    Tipe Kasur: ${bedType.charAt(0).toUpperCase() + bedType.slice(1)}
+    Metode Pembayaran: ${paymentMethod}
+    Total Bayar: Rp. ${totalPrice}`);
 });
 document.getElementById('resetButton').addEventListener('click', function() {
     document.getElementById('bookingForm').reset();
